@@ -42,7 +42,7 @@ public class TransactionService {
     }
 
     private Transaction save(Transaction transaction, Wallet walletPayee, Wallet walletPayer)
-            throws Exception {
+            throws InvalidTransactionException {
         Transaction newTransaction = transactionRepository.save(transaction);
 
         walletService.save(walletPayee.credit(transaction.value()));
