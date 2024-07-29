@@ -9,7 +9,6 @@ public class AuthorizationService {
 
     public void authorize(Transaction transaction) {
         System.out.println("Authorized");
-        ;
     }
 
 }

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table("TRANSACTIONS")
@@ -13,9 +14,11 @@ public record Transaction(
         Long payer,
         Long payee,
         BigDecimal value,
-        @CreatedDate LocalDateTime createdAt) {
+        @CreatedDate LocalDateTime createdAt,
+        @Version Long version) {
 
     public Transaction {
         value = value.setScale(2);
     }
+
 }

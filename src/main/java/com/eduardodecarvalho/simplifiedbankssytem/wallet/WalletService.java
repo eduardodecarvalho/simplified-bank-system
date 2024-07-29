@@ -1,5 +1,7 @@
 package com.eduardodecarvalho.simplifiedbankssytem.wallet;
 
+import java.util.List;
+
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +19,12 @@ public class WalletService {
                 .orElseThrow(NotFoundException::new);
     }
 
-    public void save(Wallet wallet) {
-        walletRepository.save(wallet);
+    public Wallet save(Wallet wallet) {
+        return walletRepository.save(wallet);
+    }
+
+    public List<Wallet> findAll() {
+        return walletRepository.findAll();
     }
 
 }
