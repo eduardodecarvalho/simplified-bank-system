@@ -1,8 +1,6 @@
 # Use an official OpenJDK 21 runtime as a parent image
 FROM openjdk:21-jdk-slim
 
-ENV ENVIRONMENT=development
-
 # Set the working directory in the container
 WORKDIR /app
 
